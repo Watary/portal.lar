@@ -13,12 +13,14 @@
 
 
     email: administrator@gmail.com
+    
     password: Administrator
 
 - User:
 
 
     email: user@gmail.com
+    
     password: User  
 
 ## Refresh database
