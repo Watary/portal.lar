@@ -13,14 +13,12 @@
 
 
     email: administrator@gmail.com
-    
     password: Administrator
 
 - User:
 
 
     email: user@gmail.com
-    
     password: User  
 
 ## Refresh database
@@ -29,3 +27,8 @@
     
     php artisan migrate:refresh
     php artisan db:seed
+
+## Include modules
+
+- Permissions and Roles: https://github.com/spatie/laravel-permission.git
+- Admin template (AdminLTE): https://adminlte.io/themes/v3/index3.html
