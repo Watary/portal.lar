@@ -17,6 +17,8 @@
 <script src="{{ asset('admin-assets/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('admin-assets/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('admin-assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <!-- daterangepicker -->
 <script src="{{ asset('admin-assets/plugins/moment/moment.min.js') }}"></script>
 <script src="{{ asset('admin-assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
@@ -32,3 +34,4 @@
 <script src="{{ asset('admin-assets/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admin-assets/js/pages/dashboard.js') }}"></script>
+<script src="{{ asset('admin-assets/js/commands.js') }}"></script>
