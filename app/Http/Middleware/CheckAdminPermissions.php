@@ -16,7 +16,19 @@ class CheckAdminPermissions
      */
     public function handle($request, Closure $next, ...$permissions)
     {
+        $access = false;
+
         if(!auth()->user() || !auth()->user()->can($permissions)){
+            abort(404);
+        }
+
+        foreach ($permissions as $permission) {
+            if(auth()->user()->can($permissions)) {
+                $access = true;
+            }
+        }
+
+        if(!$access){
             abort(404);
         }
 

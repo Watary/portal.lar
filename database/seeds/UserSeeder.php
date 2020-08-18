@@ -30,5 +30,15 @@ class UserSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        for($i = 0; $i < 20; $i++){
+            DB::table('users')->insert([
+                'name' => 'User_' . $i,
+                'email' => 'user' . $i . '@gmail.com',
+                'password' => Hash::make('User' . $i),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }

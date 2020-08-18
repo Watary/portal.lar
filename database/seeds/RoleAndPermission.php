@@ -28,16 +28,27 @@ class RoleAndPermission extends Seeder
         $roles['user'] = Role::create(['name' => 'user']);
 
         // list permissions
-        $permissions['access_admin'] = Permission::create(['name' => 'access_admin']);
-        $permissions['access_admin_users'] = Permission::create(['name' => 'access_admin_users']);
-        $permissions['access_admin_rules'] = Permission::create(['name' => 'access_admin_rules']);
-        $permissions['access_admin_permissions'] = Permission::create(['name' => 'access_admin_permissions']);
+        $permissions['admin_access'] = Permission::create(['name' => 'admin_access']);
+
+        $permissions['admin_users_access'] = Permission::create(['name' => 'admin_users_access']);
+        $permissions['admin_users_create'] = Permission::create(['name' => 'admin_users_create']);
+        $permissions['admin_users_update'] = Permission::create(['name' => 'admin_users_update']);
+        $permissions['admin_users_delete'] = Permission::create(['name' => 'admin_users_delete']);
+
+        $permissions['admin_rules_access'] = Permission::create(['name' => 'admin_rules_access']);
+        $permissions['admin_rules_create'] = Permission::create(['name' => 'admin_rules_create']);
+        $permissions['admin_rules_update'] = Permission::create(['name' => 'admin_rules_update']);
+        $permissions['admin_rules_delete'] = Permission::create(['name' => 'admin_rules_delete']);
+
+        $permissions['admin_permissions_access'] = Permission::create(['name' => 'admin_permissions_access']);
+        $permissions['admin_permissions_create'] = Permission::create(['name' => 'admin_permissions_create']);
+        $permissions['admin_permissions_update'] = Permission::create(['name' => 'admin_permissions_update']);
+        $permissions['admin_permissions_delete'] = Permission::create(['name' => 'admin_permissions_delete']);
 
         // add permissions in roles
-        $roles['administrator']->givePermissionTo($permissions['access_admin']);
-        $roles['administrator']->givePermissionTo($permissions['access_admin_users']);
-        $roles['administrator']->givePermissionTo($permissions['access_admin_rules']);
-        $roles['administrator']->givePermissionTo($permissions['access_admin_permissions']);
+        foreach ($permissions as $permission){
+            $roles['administrator']->givePermissionTo($permission);
+        }
 
         // add roles in users
         $users['administrator']->assignRole($roles['administrator']);

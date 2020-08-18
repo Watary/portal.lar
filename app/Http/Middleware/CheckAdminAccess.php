@@ -15,7 +15,7 @@ class CheckAdminAccess
      */
     public function handle($request, Closure $next)
     {
-        if(!auth()->user() || !auth()->user()->can('access_admin')){
+        if(!auth()->user() || !auth()->user()->can('admin_access')){
             abort(404);
         }
 
