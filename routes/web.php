@@ -28,5 +28,6 @@ Route::prefix('admin')->middleware(['auth', 'check.admin.access'])->group(functi
     Route::get('/users', 'Admin\UsersController@index')->name('admin.users')->middleware(['check.admin.permissions:admin_users_access']);
     Route::get('/roles', 'Admin\RolesController@index')->name('admin.roles')->middleware(['check.admin.permissions:admin_rules_access']);
     Route::get('/permissions', 'Admin\PermissionsController@index')->name('admin.permissions')->middleware(['check.admin.permissions:admin_permissions_access']);
+    Route::get('/permissions/create', 'Admin\PermissionsController@create')->name('admin.permissions.create')->middleware(['check.admin.permissions:admin_permissions_create']);
 });
 
