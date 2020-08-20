@@ -3,12 +3,12 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Permissions list</h3>
+            <h3 class="card-title">Permission: {{ $permission->name }}</h3>
         </div>
         <!-- /.card-header -->
         <div style="overflow-x:auto;">
             <div class="card-body">
-                @include('admin.permissions.table-permissions')
+
             </div>
         </div>
         <!-- /.card-body -->

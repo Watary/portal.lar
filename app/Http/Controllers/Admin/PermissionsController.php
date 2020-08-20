@@ -12,6 +12,15 @@ class PermissionsController extends Controller
     public function index(){
         return view('admin.permissions.list', [
             'permissions' => Permission::all(),
+            'page' => [
+                'title' => 'Permissions',
+            ],
+        ]);
+    }
+
+    public function show($id){
+        return view('admin.permissions.show', [
+            'permission' => Permission::all()->where('id', $id)->first(),
         ]);
     }
 }
