@@ -23,4 +23,16 @@ class PermissionsController extends Controller
             'permission' => Permission::all()->where('id', $id)->first(),
         ]);
     }
+
+    public function create(){
+        return view('admin.permissions.create', [
+
+        ]);
+    }
+
+    public function store(){
+        return response()->json([
+            'status' => 'success',
+        ]);
+    }
 }
